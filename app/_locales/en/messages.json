@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "iPhoneify",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Change webpage text to look like it was typed on an iPhone",
+    "description": "The description of the application"
+  }
+}
