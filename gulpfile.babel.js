@@ -124,7 +124,7 @@ gulp.task('wiredep', () => {
 gulp.task('package', function () {
   var manifest = require('./dist/manifest.json');
   return gulp.src('dist/**')
-      .pipe($.zip('iPhoneify-' + manifest.version + '.zip'))
+      .pipe($.zip('APhoneify-' + manifest.version + '.zip'))
       .pipe(gulp.dest('package'));
 });
 
