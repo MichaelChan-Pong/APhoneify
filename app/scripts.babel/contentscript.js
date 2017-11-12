@@ -9,19 +9,19 @@ window.addEventListener('load', () => {
 
       if(node.nodeType == Element.TEXT_NODE){
         node.textContent = node.textContent.replace(/\Wi\W/g, ' A [?] ');
-        if(node.textContent.substring(0, 2) == 'i ') {
+        if(node.textContent.substring(0, 2).match(/i\W/)) {
           node.textContent = node.textContent.replace(/i/, 'A [?]');
         }
-        if(node.textContent.substring(node.textContent.length - 2, node.textContent.length) == ' i') {
+        if(node.textContent.substring(node.textContent.length - 2, node.textContent.length).match(/ i/)) {
           node.textContent = node.textContent.substring(0, node.textContent.length - 1);
           node.textContent = node.textContent + 'A [?]';
         }
 
         node.textContent = node.textContent.replace(/\WI\W/g, ' A [?] ');
-        if(node.textContent.substring(0, 2) == 'I ') {
+        if(node.textContent.substring(0, 2).match(/I\W/)) {
           node.textContent = node.textContent.replace(/I/, 'A [?]');
         }
-        if(node.textContent.substring(node.textContent.length - 2, node.textContent.length) == ' I') {
+        if(node.textContent.substring(node.textContent.length - 2, node.textContent.length).match(/ I/)) {
           node.textContent = node.textContent.substring(0, node.textContent.length - 1);
           node.textContent = node.textContent + 'A [?]';
         }
