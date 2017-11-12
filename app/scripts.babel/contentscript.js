@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
       //  Make sure this is a text node
 
       if(node.nodeType == Element.TEXT_NODE){
-        node.textContent = node.textContent.replace(/\ i\ /g, ' A [?] ');
+        node.textContent = node.textContent.replace(/\Wi\W/g, ' A [?] ');
         if(node.textContent.substring(0, 2) == 'i ') {
           node.textContent = node.textContent.replace(/i/, 'A [?]');
         }
@@ -17,7 +17,7 @@ window.addEventListener('load', () => {
           node.textContent = node.textContent + 'A [?]';
         }
 
-        node.textContent = node.textContent.replace(/\ I\ /g, ' A [?] ');
+        node.textContent = node.textContent.replace(/\WI\W/g, ' A [?] ');
         if(node.textContent.substring(0, 2) == 'I ') {
           node.textContent = node.textContent.replace(/I/, 'A [?]');
         }
