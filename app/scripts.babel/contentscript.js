@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('load', () => {
-  var replaceTextInNode = function(parentNode){
+  var replaceTextInNode = function(parentNode, root){
     for(var i = parentNode.childNodes.length-1; i >= 0; i--){
       var node = parentNode.childNodes[i];
 
@@ -28,12 +28,15 @@ window.addEventListener('load', () => {
       } else if(node.nodeType == Element.ELEMENT_NODE){
         //  Check this node's child nodes for text nodes to act on
 
-        replaceTextInNode(node);
+        replaceTextInNode(node, false);
       }
     }
 
-    setTimeout(replaceTextInNode, 30000, parentNode);
+    if(root) {
+      setTimeout(replaceTextInNode, 5000, document.body, true);
+    }
+
   };
 
-  replaceTextInNode(document.body);
+  replaceTextInNode(document.body, true);
 });
