@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
 
         node.textContent = node.textContent.replace(/\ I\ /g, ' A [?] ');
         if(node.textContent.substring(0, 2) == 'I ') {
-          node.textContent = node.textContent.replace(/i/, 'A [?]');
+          node.textContent = node.textContent.replace(/I/, 'A [?]');
         }
         if(node.textContent.substring(node.textContent.length - 2, node.textContent.length) == ' I') {
           node.textContent = node.textContent.substring(0, node.textContent.length - 1);
@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
       }
     }
 
-    setTimeout(replaceTextInNode, 10000, parentNode);
+    setTimeout(replaceTextInNode, 30000, parentNode);
   };
 
   replaceTextInNode(document.body);
