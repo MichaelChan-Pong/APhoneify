@@ -9,11 +9,20 @@ window.addEventListener('load', () => {
 
       if(node.nodeType == Element.TEXT_NODE){
         node.textContent = node.textContent.replace(/\ i\ /g, ' A [?] ');
-        if(node.textContent.charAt(0) == 'i') {
+        if(node.textContent.substring(0, 2) == 'i ') {
           node.textContent = node.textContent.replace(/i/, 'A [?]');
         }
-        if(node.textContent.charAt(node.textContent.length - 1) == 'i') {
-          node.textContent = node.textContent.substring(0, node.textContent.length - 2);
+        if(node.textContent.substring(node.textContent.length - 2, node.textContent.length) == ' i') {
+          node.textContent = node.textContent.substring(0, node.textContent.length - 1);
+          node.textContent = node.textContent + 'A [?]';
+        }
+
+        node.textContent = node.textContent.replace(/\ I\ /g, ' A [?] ');
+        if(node.textContent.substring(0, 2) == 'I ') {
+          node.textContent = node.textContent.replace(/i/, 'A [?]');
+        }
+        if(node.textContent.substring(node.textContent.length - 2, node.textContent.length) == ' I') {
+          node.textContent = node.textContent.substring(0, node.textContent.length - 1);
           node.textContent = node.textContent + 'A [?]';
         }
       } else if(node.nodeType == Element.ELEMENT_NODE){
@@ -23,7 +32,7 @@ window.addEventListener('load', () => {
       }
     }
 
-    setTimeout(replaceTextInNode, 5000, parentNode);
+    setTimeout(replaceTextInNode, 10000, parentNode);
   };
 
   replaceTextInNode(document.body);
